@@ -7,7 +7,8 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       const urls = [
-      'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-03-20T10%3A00%3A00.000Z&before=2023-03-20T11%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
+      'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-03-20T09%3A00%3A00.000Z&before=2023-03-20T10%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
+      'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-03-20T10%3A00%3A01.000Z&before=2023-03-20T11%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
       'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-03-20T11%3A00%3A01.000Z&before=2023-03-20T12%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
       'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-03-20T12%3A00%3A01.000Z&before=2023-03-20T13%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
       'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-03-20T13%3A00%3A01.000Z&before=2023-03-20T14%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
@@ -18,6 +19,7 @@ const App = () => {
       'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-03-20T18%3A00%3A01.000Z&before=2023-03-20T19%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
       'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-03-20T19%3A00%3A01.000Z&before=2023-03-20T20%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
       'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-03-20T20%3A00%3A01.000Z&before=2023-03-20T21%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
+      'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-03-20T21%3A00%3A01.000Z&before=2023-03-20T22%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
       ];
       const promises = urls.map(url =>
         fetch(url, {
