@@ -19,7 +19,7 @@ const App = () => {
   
     const interval = setInterval(() => {
       fetchData();
-    }, 60000);
+    }, 6000);
   
     return () => clearInterval(interval);
   }, []);
