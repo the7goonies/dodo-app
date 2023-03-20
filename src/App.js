@@ -1,50 +1,56 @@
-import React, { Component } from "react"
-import logo from "./logo.svg"
-import "./App.css"
+const App = () => {
+  const [data, setData] = useState(null);
 
-class LambdaDemo extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { loading: false, msg: null }
-  }
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-03-20T06%3A40%3A22.108Z&before=2023-03-20T20%3A31%3A32.108Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber', {
+        headers: {
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNTllODhhODlmZDY5MTAxNTM5ZGZkNDFmIiwicm9sZSI6Im93bmVyIiwiY2hhbm5lbCI6IjU5YjQ3ODk1MGQzZmRlNzVhZGRiNTJiOSIsInByb3ZpZGVyIjoidHdpdGNoIiwiYXV0aFRva2VuIjoiVWp1blZ6VWl0VXFEQ2MwRENaaXFoNS1oeVI1MDdTcEc2Y3hhQk00SFRwRm5VTTlsIiwiaWF0IjoxNjc2MTk1OTU0LCJpc3MiOiJTdHJlYW1FbGVtZW50cyJ9.tbk2Ouiy6p9GDBvV2dpZ9iuE9gmwcFfIwslDnkmoET0'
+        }
+      });
+      const json = await response.json();
+      setData(json);
+    };
+  
+    fetchData();
+  
+    const interval = setInterval(() => {
+      fetchData();
+    }, 60000);
+  
+    return () => clearInterval(interval);
+  }, []);
 
-  handleClick = api => e => {
-    e.preventDefault()
+  useEffect(() => {
+    localStorage.setItem('data', JSON.stringify(data));
+  }, [data]);
 
-    this.setState({ loading: true })
-    fetch("/.netlify/functions/" + api)
-      .then(response => response.json())
-      .then(json => this.setState({ loading: false, msg: json.msg }))
-  }
-
-  render() {
-    const { loading, msg } = this.state
-
-    return (
-      <p>
-        <button onClick={this.handleClick("hello")}>{loading ? "Loading..." : "Call Lambda"}</button>
-        <button onClick={this.handleClick("async-dadjoke")}>{loading ? "Loading..." : "Call Async Lambda"}</button>
-        <br />
-        <span>{msg}</span>
-      </p>
-    )
-  }
-}
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <LambdaDemo />
-        </header>
+  return (
+    <div>
+    {data && (
+      <div>
+       <table>
+        <tr>
+          <th>Gifter</th>
+          <th>Count</th>
+        </tr>
+          {Object.entries(data.reduce((counts, item) => {
+            if (item.data.sender) {
+              counts[item.data.sender] = counts[item.data.sender] ? counts[item.data.sender] + 1 : 1;
+            }
+            return counts;
+          }, {})).sort((a, b) => b[1] - a[1]).map(([sender, count]) => (
+            <tr key={sender}>
+              <td>{sender}</td>
+              <td>{count}</td>
+            </tr>
+          ))}
+        </table>
+        <p>Total Gifted Subs: {data.filter(item => item.data.sender).length}</p>
       </div>
-    )
-  }
-}
+    )}
+  </div>
+  );
+};
 
-export default App
+export default App;
