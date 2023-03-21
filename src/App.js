@@ -7,7 +7,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       const urls = [
-      'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-03-21T09%3A00%3A00.000Z&before=2023-03-210T10%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
+      'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-03-21T09%3A00%3A00.000Z&before=2023-03-21T10%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
       'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-03-21T10%3A00%3A01.000Z&before=2023-03-21T11%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
       'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-03-21T11%3A00%3A01.000Z&before=2023-03-21T12%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
       'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-03-21T12%3A00%3A01.000Z&before=2023-03-21T13%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
