@@ -38,7 +38,7 @@ const App = () => {
       'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-29T22%3A00%3A00.001Z&before=2023-09-29T22%3A30%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
       'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-29T22%3A30%3A00.001Z&before=2023-09-29T23%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
       'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-29T23%3A00%3A00.001Z&before=2023-09-29T23%3A30%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-      'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-29T23%3A30%3A00.001Z&before=2023-09-29T24%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
+      'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-29T23%3A30%3A00.001Z&before=2023-09-29T00%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
       ];
       const promises = urls.map(url =>
         fetch(url, {
