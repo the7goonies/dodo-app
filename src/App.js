@@ -7,102 +7,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       const urls = [
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T08%3A00%3A00.000Z&before=2023-09-30T08%3A15%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T08%3A15%3A00.001Z&before=2023-09-30T09%3A30%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T08%3A30%3A00.001Z&before=2023-09-30T09%3A45%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T08%3A45%3A00.001Z&before=2023-09-30T09%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T09%3A00%3A00.001Z&before=2023-09-30T09%3A15%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T09%3A15%3A00.001Z&before=2023-09-30T09%3A30%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T09%3A30%3A00.001Z&before=2023-09-30T09%3A45%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T09%3A45%3A00.001Z&before=2023-09-30T10%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T10%3A00%3A00.001Z&before=2023-09-30T10%3A15%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T10%3A15%3A00.001Z&before=2023-09-30T10%3A30%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T10%3A30%3A00.001Z&before=2023-09-30T10%3A45%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T10%3A45%3A00.001Z&before=2023-09-30T11%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T11%3A00%3A00.001Z&before=2023-09-30T11%3A15%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T11%3A15%3A00.001Z&before=2023-09-30T11%3A30%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T11%3A30%3A00.001Z&before=2023-09-30T11%3A45%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T11%3A45%3A00.001Z&before=2023-09-30T12%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T12%3A00%3A00.001Z&before=2023-09-30T12%3A15%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T12%3A15%3A00.001Z&before=2023-09-30T12%3A30%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T12%3A30%3A00.001Z&before=2023-09-30T12%3A45%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T12%3A45%3A00.001Z&before=2023-09-30T13%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T13%3A00%3A00.001Z&before=2023-09-30T13%3A05%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T13%3A05%3A00.001Z&before=2023-09-30T13%3A10%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T13%3A10%3A00.001Z&before=2023-09-30T13%3A15%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T13%3A15%3A00.001Z&before=2023-09-30T13%3A20%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T13%3A20%3A00.001Z&before=2023-09-30T13%3A25%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T13%3A25%3A00.001Z&before=2023-09-30T13%3A30%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T13%3A30%3A00.001Z&before=2023-09-30T13%3A35%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T13%3A35%3A00.001Z&before=2023-09-30T13%3A40%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T13%3A40%3A00.001Z&before=2023-09-30T13%3A45%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T13%3A45%3A00.001Z&before=2023-09-30T13%3A50%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T13%3A50%3A00.001Z&before=2023-09-30T13%3A55%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T13%3A55%3A00.001Z&before=2023-09-30T14%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T14%3A00%3A00.001Z&before=2023-09-30T14%3A05%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T14%3A05%3A00.001Z&before=2023-09-30T14%3A10%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T14%3A10%3A00.001Z&before=2023-09-30T14%3A15%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T14%3A15%3A00.001Z&before=2023-09-30T14%3A20%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T14%3A20%3A00.001Z&before=2023-09-30T14%3A25%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T14%3A25%3A00.001Z&before=2023-09-30T14%3A30%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T14%3A30%3A00.001Z&before=2023-09-30T14%3A35%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T14%3A35%3A00.001Z&before=2023-09-30T14%3A40%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T14%3A40%3A00.001Z&before=2023-09-30T14%3A45%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T14%3A45%3A00.001Z&before=2023-09-30T14%3A50%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T14%3A50%3A00.001Z&before=2023-09-30T14%3A55%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T14%3A55%3A00.001Z&before=2023-09-30T15%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T15%3A00%3A00.001Z&before=2023-09-30T15%3A05%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T15%3A05%3A00.001Z&before=2023-09-30T15%3A10%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T15%3A10%3A00.001Z&before=2023-09-30T15%3A15%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T15%3A15%3A00.001Z&before=2023-09-30T15%3A20%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T15%3A20%3A00.001Z&before=2023-09-30T15%3A25%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T15%3A25%3A00.001Z&before=2023-09-30T15%3A30%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T15%3A30%3A00.001Z&before=2023-09-30T15%3A35%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T15%3A35%3A00.001Z&before=2023-09-30T15%3A40%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T15%3A40%3A00.001Z&before=2023-09-30T15%3A45%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T15%3A45%3A00.001Z&before=2023-09-30T15%3A50%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T15%3A50%3A00.001Z&before=2023-09-30T15%3A55%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T15%3A55%3A00.001Z&before=2023-09-30T16%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T16%3A00%3A00.001Z&before=2023-09-30T16%3A05%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T16%3A05%3A00.001Z&before=2023-09-30T16%3A10%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T16%3A10%3A00.001Z&before=2023-09-30T16%3A15%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T16%3A15%3A00.001Z&before=2023-09-30T16%3A20%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T16%3A20%3A00.001Z&before=2023-09-30T16%3A25%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T16%3A25%3A00.001Z&before=2023-09-30T16%3A30%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T16%3A30%3A00.001Z&before=2023-09-30T16%3A35%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T16%3A35%3A00.001Z&before=2023-09-30T16%3A40%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T16%3A40%3A00.001Z&before=2023-09-30T16%3A45%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T16%3A45%3A00.001Z&before=2023-09-30T16%3A50%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T16%3A50%3A00.001Z&before=2023-09-30T16%3A55%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T16%3A55%3A00.001Z&before=2023-09-30T17%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T17%3A00%3A00.001Z&before=2023-09-30T17%3A15%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T17%3A15%3A00.001Z&before=2023-09-30T17%3A30%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T17%3A30%3A00.001Z&before=2023-09-30T17%3A45%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T17%3A45%3A00.001Z&before=2023-09-30T18%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T18%3A00%3A00.001Z&before=2023-09-30T18%3A15%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T18%3A15%3A00.001Z&before=2023-09-30T18%3A30%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T18%3A30%3A00.001Z&before=2023-09-30T18%3A45%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T18%3A45%3A00.001Z&before=2023-09-30T19%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T19%3A00%3A00.001Z&before=2023-09-30T19%3A15%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T19%3A15%3A00.001Z&before=2023-09-30T19%3A30%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T19%3A30%3A00.001Z&before=2023-09-30T19%3A45%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T19%3A45%3A00.001Z&before=2023-09-30T20%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T20%3A00%3A00.001Z&before=2023-09-30T20%3A15%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T20%3A15%3A00.001Z&before=2023-09-30T20%3A30%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T20%3A30%3A00.001Z&before=2023-09-30T20%3A45%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T20%3A45%3A00.001Z&before=2023-09-30T21%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T21%3A00%3A00.001Z&before=2023-09-30T21%3A15%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T21%3A15%3A00.001Z&before=2023-09-30T21%3A30%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T21%3A30%3A00.001Z&before=2023-09-30T21%3A45%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T21%3A45%3A00.001Z&before=2023-09-30T22%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T22%3A00%3A00.001Z&before=2023-09-30T22%3A15%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T22%3A15%3A00.001Z&before=2023-09-30T22%3A30%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T22%3A30%3A00.001Z&before=2023-09-30T22%3A45%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T22%3A45%3A00.001Z&before=2023-09-30T23%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T23%3A00%3A00.001Z&before=2023-09-30T23%3A15%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T23%3A15%3A00.001Z&before=2023-09-30T23%3A30%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T23%3A30%3A00.001Z&before=2023-09-30T23%3A45%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
-'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T23%3A45%3A00.001Z&before=2023-09-30T00%3A00%3A00.000Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=subscriber',
+  'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2024-07-25T00%3A00%3A00.000Z&before=2024-07-25T23%3A59%3A59.999Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=tip'
       ];
       const promises = urls.map(url =>
         fetch(url, {
@@ -131,29 +36,31 @@ const App = () => {
 
   return (
     <div>
-    {data.length > 0 && (
-      <div>
-       <table>
-        <tr>
-          <th>Gifter</th>
-          <th>Count</th>
-        </tr>
-          {Object.entries(data.reduce((counts, item) => {
-            if (item.data.sender) {
-              counts[item.data.sender] = counts[item.data.sender] ? counts[item.data.sender] + 1 : 1;
-            }
-            return counts;
-          }, {})).sort((a, b) => b[1] - a[1]).map(([sender, count]) => (
-            <tr key={sender}>
-              <td>{sender}</td>
-              <td>{count}</td>
+      {data.length > 0 && (
+        <div>
+          <table>
+            <tr>
+              <th>Donor</th>
+              <th>Total Donation</th>
             </tr>
-          ))}
-        </table>
-        <p>Total Gifted Subs: {data.filter(item => item.data.sender).length}</p>
-      </div>
-    )}
-  </div>
+            {Object.entries(data.reduce((donations, item) => {
+              if (item.data.tipper) {
+                donations[item.data.tipper] = donations[item.data.tipper]
+                  ? donations[item.data.tipper] + item.data.amount
+                  : item.data.amount;
+              }
+              return donations;
+            }, {})).sort((a, b) => b[1] - a[1]).map(([tipper, amount]) => (
+              <tr key={tipper}>
+                <td>{tipper}</td>
+                <td>${amount.toFixed(2)}</td>
+              </tr>
+            ))}
+          </table>
+          <p>Total Donations: ${data.reduce((total, item) => total + item.data.amount, 0).toFixed(2)}</p>
+        </div>
+      )}
+    </div>
   );
 };
 
