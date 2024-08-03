@@ -6,7 +6,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = 'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T00%3A00%3A00.000Z&before=2023-09-30T23%3A59%3A59.999Z&limit=500&mincheer=1&minhost=1&mintip=0&origin=0&types=tips';
+      const url = 'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T00%3A00%3A00.000Z&before=2023-09-30T23%3A59%3A59.999Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=tip';
 
       const response = await fetch(url, {
         headers: {
