@@ -37,26 +37,26 @@ const App = () => {
       {data.length > 0 && (
         <div>
           <table>
-            <tr>
-              <th>Donor</th>
-              <th>Total Donation</th>
-            </tr>
-            {Object.entries(data.reduce((donations, item) => {
-              // Assuming item.data.tipper is the donor and item.data.amount is the donation amount
-              if (item.data && item.data.tipper) {
-                donations[item.data.tipper] = donations[item.data.tipper]
-                  ? donations[item.data.tipper] + item.data.amount
-                  : item.data.amount;
-              }
-              return donations;
-            }, {})).sort((a, b) => b[1] - a[1]).map(([tipper, amount]) => (
-              <tr key={tipper}>
-                <td>{tipper}</td>
-                <td>${amount.toFixed(2)}</td>
+            <thead>
+              <tr>
+                <th>Donor</th>
+                <th>Amount</th>
+                <th>Currency</th>
+                <th>Message</th>
               </tr>
-            ))}
+            </thead>
+            <tbody>
+              {data.map(item => (
+                <tr key={item.tipId}>
+                  <td>{item.displayName}</td>
+                  <td>{item.amount}</td>
+                  <td>{item.currency}</td>
+                  <td>{item.message}</td>
+                </tr>
+              ))}
+            </tbody>
           </table>
-          <p>Total Donations: ${data.reduce((total, item) => total + (item.data ? item.data.amount : 0), 0).toFixed(2)}</p>
+          <p>Total Donations: ${data.reduce((total, item) => total + item.amount, 0).toFixed(2)}</p>
         </div>
       )}
     </div>
