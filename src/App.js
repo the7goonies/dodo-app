@@ -32,9 +32,13 @@ const App = () => {
     localStorage.setItem('data', JSON.stringify(data));
   }, [data]);
 
+const totalDonations = data.reduce((total, item) => {
+    return total + (item.data.amount || 0);
+  }, 0);
+
   return (
     <div>
-      {data.length > 0 && (
+      {data.length > 0 ? (
         <div>
           <table>
             <thead>
@@ -47,17 +51,19 @@ const App = () => {
             </thead>
             <tbody>
               {data.map(item => (
-                <tr key={item.tipId}>
-                  <td>{item.displayName}</td>
-                  <td>{item.amount}</td>
-                  <td>{item.currency}</td>
-                  <td>{item.message}</td>
+                <tr key={item._id}>
+                  <td>{item.data.displayName || 'Unknown'}</td>
+                  <td>{item.data.amount || '0.00'}</td>
+                  <td>{item.data.currency || 'N/A'}</td>
+                  <td>{item.data.message || 'No message'}</td>
                 </tr>
               ))}
             </tbody>
           </table>
-          <p>Total Donations: ${data.reduce((total, item) => total + item.amount, 0).toFixed(2)}</p>
+          <p>Total Donations: {totalDonations.toFixed(2)} {data[0].data.currency}</p>
         </div>
+      ) : (
+        <p>No donations found.</p>
       )}
     </div>
   );
