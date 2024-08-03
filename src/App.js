@@ -6,27 +6,25 @@ const App = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const urls = [
-  'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2024-07-25T00%3A00%3A00.000Z&before=2024-07-25T23%3A59%3A59.999Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=tip'
-      ];
-      const promises = urls.map(url =>
-        fetch(url, {
-          headers: {
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNTllODhhODlmZDY5MTAxNTM5ZGZkNDFmIiwicm9sZSI6Im93bmVyIiwiY2hhbm5lbCI6IjU5YjQ3ODk1MGQzZmRlNzVhZGRiNTJiOSIsInByb3ZpZGVyIjoidHdpdGNoIiwiYXV0aFRva2VuIjoiVWp1blZ6VWl0VXFEQ2MwRENaaXFoNS1oeVI1MDdTcEc2Y3hhQk00SFRwRm5VTTlsIiwiaWF0IjoxNjc2MTk1OTU0LCJpc3MiOiJTdHJlYW1FbGVtZW50cyJ9.tbk2Ouiy6p9GDBvV2dpZ9iuE9gmwcFfIwslDnkmoET0'
-          }
-        }).then(response => response.json())
-      );
-      const jsonData = await Promise.all(promises);
-      const mergedData = jsonData.flat(); // merge the data from all URLs into a single array
-      setData(mergedData);
+      const url = 'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2023-09-30T00%3A00%3A00.000Z&before=2023-09-30T23%3A59%3A59.999Z&limit=500&mincheer=1&minhost=1&mintip=0&origin=0&types=tips';
+
+      const response = await fetch(url, {
+        headers: {
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNTllODhhODlmZDY5MTAxNTM5ZGZkNDFmIiwicm9sZSI6Im93bmVyIiwiY2hhbm5lbCI6IjU5YjQ3ODk1MGQzZmRlNzVhZGRiNTJiOSIsInByb3ZpZGVyIjoidHdpdGNoIiwiYXV0aFRva2VuIjoiVWp1blZ6VWl0VXFEQ2MwRENaaXFoNS1oeVI1MDdTcEc2Y3hhQk00SFRwRm5VTTlsIiwiaWF0IjoxNjc2MTk1OTU0LCJpc3MiOiJTdHJlYW1FbGVtZW50cyJ9.tbk2Ouiy6p9GDBvV2dpZ9iuE9gmwcFfIwslDnkmoET0'
+        }
+      });
+
+      const jsonData = await response.json();
+      console.log(jsonData); // Log the data to inspect its structure
+      setData(jsonData);
     };
-  
+
     fetchData();
-  
+
     const interval = setInterval(() => {
       fetchData();
     }, 60000);
-  
+
     return () => clearInterval(interval);
   }, []);
 
@@ -44,7 +42,8 @@ const App = () => {
               <th>Total Donation</th>
             </tr>
             {Object.entries(data.reduce((donations, item) => {
-              if (item.data.tipper) {
+              // Assuming item.data.tipper is the donor and item.data.amount is the donation amount
+              if (item.data && item.data.tipper) {
                 donations[item.data.tipper] = donations[item.data.tipper]
                   ? donations[item.data.tipper] + item.data.amount
                   : item.data.amount;
@@ -57,7 +56,7 @@ const App = () => {
               </tr>
             ))}
           </table>
-          <p>Total Donations: ${data.reduce((total, item) => total + item.data.amount, 0).toFixed(2)}</p>
+          <p>Total Donations: ${data.reduce((total, item) => total + (item.data ? item.data.amount : 0), 0).toFixed(2)}</p>
         </div>
       )}
     </div>
