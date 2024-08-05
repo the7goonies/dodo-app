@@ -57,6 +57,9 @@ const App = () => {
     return acc;
   }, {});
 
+  // Convert grouped data to an array and sort by total amount
+  const sortedGroupedData = Object.entries(groupedData).sort((a, b) => b[1].totalAmount - a[1].totalAmount);
+
   const totalDonations = data.reduce((total, item) => {
     return total + (item.data.amount || 0);
   }, 0);
@@ -96,7 +99,7 @@ const App = () => {
               </tr>
             </thead>
             <tbody>
-              {Object.entries(groupedData).map(([donor, { totalAmount, currency }]) => (
+              {sortedGroupedData.map(([donor, { totalAmount, currency }]) => (
                 <tr key={donor}>
                   <td>{donor}</td>
                   <td>{totalAmount.toFixed(2)}</td>
