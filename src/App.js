@@ -44,7 +44,20 @@ const App = () => {
     localStorage.setItem('data', JSON.stringify(data));
   }, [data]);
 
-const totalDonations = data.reduce((total, item) => {
+  // Group donations by donor
+  const groupedData = data.reduce((acc, item) => {
+    const donor = item.data.displayName || 'Unknown';
+    if (!acc[donor]) {
+      acc[donor] = {
+        totalAmount: 0,
+        currency: item.data.currency || 'N/A',
+      };
+    }
+    acc[donor].totalAmount += item.data.amount || 0;
+    return acc;
+  }, {});
+
+  const totalDonations = data.reduce((total, item) => {
     return total + (item.data.amount || 0);
   }, 0);
 
@@ -72,6 +85,27 @@ const totalDonations = data.reduce((total, item) => {
               ))}
             </tbody>
           </table>
+
+          <h3>Summary of Donations:</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Donor</th>
+                <th>Total Amount</th>
+                <th>Currency</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Object.entries(groupedData).map(([donor, { totalAmount, currency }]) => (
+                <tr key={donor}>
+                  <td>{donor}</td>
+                  <td>{totalAmount.toFixed(2)}</td>
+                  <td>{currency}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          
           <p>Total Donations: {totalDonations.toFixed(2)} {data[0].data.currency}</p>
         </div>
       ) : (
