@@ -3,7 +3,10 @@ import './App.css';
 
 const App = () => {
   const [data, setData] = useState([]);
-  const [urls, setUrls] = useState([
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const urls = [
     'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2024-08-04T00%3A00%3A00.000Z&before=2024-08-04T23%3A59%3A59.999Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=tip',
     'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2024-08-05T00%3A00%3A00.000Z&before=2024-08-05T23%3A59%3A59.999Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=tip',
     'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2024-08-06T00%3A00%3A00.000Z&before=2024-08-06T23%3A59%3A59.999Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=tip',
@@ -15,11 +18,7 @@ const App = () => {
     'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2024-08-12T00%3A00%3A00.000Z&before=2024-08-12T23%3A59%3A59.999Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=tip',
     'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2024-08-13T00%3A00%3A00.000Z&before=2024-08-13T23%3A59%3A59.999Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=tip',
     'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2024-08-14T00%3A00%3A00.000Z&before=2024-08-14T23%3A59%3A59.999Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=tip',
-    // Add more URLs here as needed
-  ]);
-
-  useEffect(() => {
-    const fetchData = async () => {
+      ];
       const promises = urls.map(url =>
         fetch(url, {
           headers: {
@@ -27,27 +26,25 @@ const App = () => {
           }
         }).then(response => response.json())
       );
-
       const jsonData = await Promise.all(promises);
       const mergedData = jsonData.flat(); // merge the data from all URLs into a single array
-      console.log(mergedData); // Log the merged data to inspect its structure
       setData(mergedData);
     };
-
+  
     fetchData();
-
+  
     const interval = setInterval(() => {
       fetchData();
     }, 60000);
-
+  
     return () => clearInterval(interval);
-  }, [urls]);
+  }, []);
 
   useEffect(() => {
     localStorage.setItem('data', JSON.stringify(data));
   }, [data]);
 
-  const totalDonations = data.reduce((total, item) => {
+const totalDonations = data.reduce((total, item) => {
     return total + (item.data.amount || 0);
   }, 0);
 
