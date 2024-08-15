@@ -18,6 +18,10 @@ const App = () => {
     'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2024-08-12T00%3A00%3A00.000Z&before=2024-08-12T23%3A59%3A59.999Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=tip',
     'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2024-08-13T00%3A00%3A00.000Z&before=2024-08-13T23%3A59%3A59.999Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=tip',
     'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2024-08-14T00%3A00%3A00.000Z&before=2024-08-14T23%3A59%3A59.999Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=tip',
+    'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2024-08-15T00%3A00%3A00.000Z&before=2024-08-15T23%3A59%3A59.999Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=tip',
+    'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2024-08-16T00%3A00%3A00.000Z&before=2024-08-16T23%3A59%3A59.999Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=tip',
+    'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2024-08-17T00%3A00%3A00.000Z&before=2024-08-17T23%3A59%3A59.999Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=tip',
+    'https://api.streamelements.com/kappa/v2/activities/59b478950d3fde75addb52b9?after=2024-08-18T00%3A00%3A00.000Z&before=2024-08-18T23%3A59%3A59.999Z&limit=500&mincheer=1&minhost=1&minsub=1&mintip=0&origin=0&types=tip',
       ];
       const promises = urls.map(url =>
         fetch(url, {
